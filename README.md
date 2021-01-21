@@ -1,2 +1,2 @@
-# ami-repository-template
+# rhel6-base-ami
 
