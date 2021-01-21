@@ -1,0 +1,7 @@
+---
+base_ami_dependencies:
+  - openssl
+  - openssh-server
+  - httpd
+  - mod_ssl
+  - mod_perl
