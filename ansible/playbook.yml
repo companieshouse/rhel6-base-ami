@@ -12,9 +12,9 @@
   roles:
     - epel
     - compile_python_source #ch_collections.base
-    - os_packages_and_patching
+    - os_package_control #ch_collections.base
     - rhel6_cis #ch_collections.enterpriselinux6
-    - ch_collections.base.clamav #ch_collections.base
-    - ch_collections.base.nagios_nrpe_client #ch_collections.base
+    - clamav #ch_collections.base
+    - nagios_nrpe_client #ch_collections.base
     - cloudwatch-agent
-    - ch_collections.base.cloudwatch_agent_helper #ch_collections.base
+    - cloudwatch_agent_helper #ch_collections.base
