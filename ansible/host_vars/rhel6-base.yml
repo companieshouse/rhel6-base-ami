@@ -49,8 +49,9 @@ clamav_daemon_configuration_changes:
 cwa_conf_json_file_content: "{{ lookup('file', 'files/cloudwatch-config.json') }}"
 
 ## Nagios Variables
-nrpe_server_allowed_hosts:
+nrpe_allowed_hosts:
   - 127.0.0.1
+  - nagiosxi.sharedservices.aws.internal
 nrpe_plugin_packages:
   - nagios-plugins-nrpe
   - nagios-plugins
