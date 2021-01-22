@@ -1,1 +1,20 @@
 ---
+- hosts: rhel6-base
+  become: true
+  pre_tasks: 
+    - name: Add 127.0.0.1 to allow hosts
+      lineinfile:
+        path: /etc/hosts.allow
+        line: "ALL: 127.0.0.1"
+  collections:
+    - ch_collections.base
+    - ch_collections.enterpriselinux6
+  roles:
+    - epel
+    - compile_python_source #ch_collections.base
+    - os_package_control #ch_collections.base
+    - rhel6_cis #ch_collections.enterpriselinux6
+    - clamav #ch_collections.base
+    - nagios_nrpe_client #ch_collections.base
+    - cloudwatch-agent
+    - cloudwatch_agent_helper #ch_collections.base

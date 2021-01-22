@@ -1,1 +1,16 @@
 ---
+collections:
+  - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base
+    type: git
+    version: 0.1.5
+  - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/enterpriselinux6
+    type: git
+    version: 0.1.5
+
+roles:
+  - src: christiangda.amazon_cloudwatch_agent
+    name: cloudwatch_agent
+  - src: geerlingguy.repo-epel
+    name: epel
+
+    
