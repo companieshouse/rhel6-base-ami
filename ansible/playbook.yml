@@ -16,5 +16,5 @@
     - rhel6_cis #ch_collections.enterpriselinux6
     - clamav #ch_collections.base
     - nagios_nrpe_client #ch_collections.base
-    - cloudwatch-agent
+    - cloudwatch_agent
     - cloudwatch_agent_helper #ch_collections.base
