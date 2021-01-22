@@ -13,8 +13,10 @@
 
 - hosts: rhel6-base
   become: true
+  collections:
+    - ch_collections.enterpriselinux6
   roles:
-    - ch_collections.enterpriselinux6.centos6_base_repo
+    - centos6_base_repo #ch_collections.enterpriselinux6
 
 - import_playbook: ../playbook.yml
   vars: 
@@ -27,3 +29,4 @@
     rhel6cis_rule_1_6_1_5: false
     rhel6cis_rule_1_6_1: false
     selinux_ports: false
+    script_dir: "/tmp"

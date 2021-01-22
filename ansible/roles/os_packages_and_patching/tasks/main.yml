@@ -7,4 +7,9 @@
   package:
     name: '{{ item }}'
     state: present
-  with_items: '{{ base_ami_dependencies }}'
+  loop: '{{ base_ami_dependencies }}'
+- name: Install any additional dependencies supplied
+  package:
+    name: '{{ item }}'
+    state: present
+  loop: '{{ additional_packages }}'
