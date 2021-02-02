@@ -2,10 +2,10 @@
 collections:
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base
     type: git
-    version: 0.1.5
+    version: 0.1.6
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/enterpriselinux6
     type: git
-    version: 0.1.5
+    version: 0.1.6
 
 roles:
   - src: christiangda.amazon_cloudwatch_agent
