@@ -6,10 +6,14 @@
     inventory:
       - name: rhel6-base
         image: "centos:centos6.10"
+        # network_mode: bridge
+        provision_docker_volumes: 
+            - /lib/modules:/lib/modules
   roles:
     - role: provision_docker
       provision_docker_inventory: "{{ inventory }}"
       provision_docker_privileged: True
+      provision_docker_use_docker_connection: true
 
 - hosts: rhel6-base
   become: true
