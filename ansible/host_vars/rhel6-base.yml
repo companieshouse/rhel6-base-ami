@@ -5,6 +5,7 @@ additional_packages:
   - iscsi-initiator-utils
   - device-mapper-multipath
   - sg3_utils
+  - libselinux-python
 
 ## EPEL Archive location (since EOL)
 epel_repo_url: "https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm"
