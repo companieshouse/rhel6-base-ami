@@ -12,5 +12,3 @@ roles:
     name: cloudwatch_agent
   - src: geerlingguy.repo-epel
     name: epel
-
-    
