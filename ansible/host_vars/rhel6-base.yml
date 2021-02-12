@@ -7,12 +7,15 @@ additional_packages:
   - sg3_utils
   - libselinux-python
 
-additional_packages_pip:
+pip_package: python-pip
+pip_executable: "/usr/local/bin/pip3"
+pip_install_packages:
+  - name: pip
+    state: latest
   - name: ansible
   - name: j2cli
     umask: "0022"
-
-pip_executable: "/usr/local/bin/pip3"
+    
 
 ## EPEL Archive location (since EOL)
 epel_repo_url: "https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm"

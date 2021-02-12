@@ -12,6 +12,7 @@
   roles:
     - epel
     - ch_collections.base.compile_python_source
+    - ch_collections.base.pip
     - ch_collections.base.os_package_control
     - ch_collections.enterpriselinux6.rhel6_cis
     - ch_collections.enterpriselinux6.clamav
