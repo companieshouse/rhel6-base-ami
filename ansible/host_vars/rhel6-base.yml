@@ -6,6 +6,7 @@ additional_packages:
   - device-mapper-multipath
   - sg3_utils
   - libselinux-python
+  - jq
 
 pip_package: python-pip
 pip_executable: "/usr/local/bin/pip3"
@@ -14,6 +15,9 @@ pip_install_packages:
     state: latest
   - name: ansible
   - name: j2cli
+    umask: "0022"
+  - name: awscli
+  - name: selinux
     umask: "0022"
     
 
