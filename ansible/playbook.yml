@@ -35,4 +35,9 @@
         path: /etc/multipath.conf
         insertafter: '^defaults*'
         line: 'user_friendly_names no'
+    - name: Make sure aws ssm agent is enabled
+      service:
+        name: amazon-ssm-agent
+        state: stopped
+        enabled: yes
         
