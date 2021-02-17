@@ -35,5 +35,4 @@
         path: /etc/multipath.conf
         insertafter: '^defaults*'
         line: 'user_friendly_names no'
-
         

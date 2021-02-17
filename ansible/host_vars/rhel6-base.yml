@@ -6,6 +6,7 @@ additional_packages:
   - device-mapper-multipath
   - sg3_utils
   - libselinux-python
+  - https://s3.eu-west-2.amazonaws.com/amazon-ssm-eu-west-2/latest/linux_amd64/amazon-ssm-agent.rpm
 
 pip_package: python-pip
 pip_executable: "/usr/local/bin/pip3"
@@ -16,7 +17,6 @@ pip_install_packages:
   - name: j2cli
     umask: "0022"
     
-
 ## EPEL Archive location (since EOL)
 epel_repo_url: "https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm"
 epel_repo_gpg_key_url: "https://archives.fedoraproject.org/pub/archive/epel/RPM-GPG-KEY-EPEL"
