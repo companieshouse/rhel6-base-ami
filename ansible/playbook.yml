@@ -1,11 +1,6 @@
 ---
 - hosts: rhel6-base
   become: true
-  pre_tasks: 
-    - name: Add 127.0.0.1 to allow hosts
-      lineinfile:
-        path: /etc/hosts.allow
-        line: "ALL: 127.0.0.1"
   collections:
     - ch_collections.base
     - ch_collections.enterpriselinux6

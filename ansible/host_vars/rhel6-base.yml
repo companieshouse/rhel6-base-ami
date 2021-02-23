@@ -54,6 +54,12 @@ rhel6cis_rule_3_6_4: false
 rhel6cis_rule_3_6_5: false
 rhel6cis_rule_5_2_13: false
 rhel6cis_rule_5_4_4: false
+# Setup hosts.allow entries
+rhel6cis_host_allow:
+  - "127.0.0.1"
+  - "10.0.0.0/255.0.0.0"
+  - "172.16.0.0/255.240.0.0"
+  - "192.168.0.0/255.255.0.0"
 
 ## ClamAV Variables
 clamav_daemon_configuration_changes:
