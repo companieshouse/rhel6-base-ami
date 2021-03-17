@@ -9,6 +9,11 @@ additional_packages:
   - git
   - https://s3.{{ region| default("eu-west-2") }}.amazonaws.com/amazon-ssm-{{ region| default("eu-west-2") }}/latest/linux_amd64/amazon-ssm-agent.rpm
   - jq
+  - docbook-utils
+  - docbook-utils-pdf
+  - ImageMagick
+  - openjade
+  - jadetex
 
 pip_package: python-pip
 pip_executable: "/usr/local/bin/pip3"
@@ -22,7 +27,7 @@ pip_install_packages:
   - name: awscli
   - name: selinux
     umask: "0022"
-    
+
 ## EPEL Archive location (since EOL)
 epel_repo_url: "https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm"
 epel_repo_gpg_key_url: "https://archives.fedoraproject.org/pub/archive/epel/RPM-GPG-KEY-EPEL"
@@ -76,7 +81,7 @@ cwa_conf_json_file_content: "{{ lookup('file', 'files/cloudwatch-config.json') }
 nrpe_allowed_hosts:
   - "127.0.0.1"
   - "10.44.12.0/24"
-  - "10.44.13.0/24"	
+  - "10.44.13.0/24"
   - "10.44.14.0/24"
 nrpe_plugin_packages:
   - nagios-plugins-nrpe
@@ -86,5 +91,5 @@ nrpe_command:
   check_disk_all:
     script: check_disk
     option: -w 80 -c 90
-nrpe_config: 
+nrpe_config:
   dont_blame_nrpe: 0
