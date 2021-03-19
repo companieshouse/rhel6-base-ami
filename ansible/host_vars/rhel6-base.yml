@@ -14,6 +14,7 @@ additional_packages:
   - ImageMagick
   - openjade
   - jadetex
+  - screen
 
 pip_package: python-pip
 pip_executable: "/usr/local/bin/pip3"
