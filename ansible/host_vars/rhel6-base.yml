@@ -79,6 +79,7 @@ clamav_daemon_configuration_changes:
 cwa_conf_json_file_content: "{{ lookup('file', 'files/cloudwatch-config.json') }}"
 
 ## Nagios Variables
+nagios_hosts: nagios.sharedservices.aws.internal
 nrpe_allowed_hosts:
   - "127.0.0.1"
   - "10.44.12.0/24"
@@ -88,9 +89,27 @@ nrpe_plugin_packages:
   - nagios-plugins-nrpe
   - nagios-plugins
   - nagios-plugins-disk
+nrpe_config: 
+  dont_blame_nrpe: 1
 nrpe_command:
-  check_disk_all:
+  check_disk:
     script: check_disk
-    option: -w 80 -c 90
-nrpe_config:
-  dont_blame_nrpe: 0
+    option: $ARG1$
+  check_load:
+    script: check_load
+    option: $ARG1$
+  check_sshd:
+    script: check_service.sh
+    option: $ARG1$
+  check_crond:
+    script: check_service.sh
+    option: $ARG1$
+  check_httpd:
+    script: check_service.sh
+    option: $ARG1$
+  check_syslogd:
+    script: check_service.sh
+    option: $ARG1$
+  check_users:
+    script: check_users
+    option: $ARG1$
