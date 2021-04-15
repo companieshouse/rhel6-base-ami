@@ -11,7 +11,6 @@
     - ch_collections.base.pip
     - ch_collections.enterpriselinux6.rhel6_cis
     - ch_collections.enterpriselinux6.clamav
-    - ch_collections.base.nagios_nrpe_client
     - cloudwatch_agent
     - ch_collections.base.cloudwatch_agent_helper
   tasks: 
