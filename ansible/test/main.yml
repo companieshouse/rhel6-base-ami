@@ -5,10 +5,10 @@
   vars:
     inventory:
       - name: rhel6-base
-        image: "centos:centos6.10"
+        image: "geerlingguy/docker-centos6-ansible"
         # The network setting allows for idempotent testing.
         # without it the role creates a brand new container, with it the container is re-used.
-        network_mode: bridge
+        # network_mode: bridge
         provision_docker_volumes: 
             - /lib/modules:/lib/modules
   roles:
@@ -24,6 +24,7 @@
   roles:
     - centos6_base_repo #ch_collections.enterpriselinux6
 
+  # Please note test will fail on final step as SELinux is disabled in Docker containers
 - import_playbook: ../playbook.yml
   vars: 
     #Disable some tasks that don't work in Docker
