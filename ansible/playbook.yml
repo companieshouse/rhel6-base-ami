@@ -4,6 +4,14 @@
   collections:
     - ch_collections.base
     - ch_collections.enterpriselinux6
+  pre_tasks:
+    - name: Updating System Packages Before Ansible Run
+      yum:
+        name: '*'
+        state: latest
+    - name: Set timezone to Europe/London
+      community.general.timezone:
+        name: Europe/London
   roles:
     - epel
     - ch_collections.base.os_package_control
@@ -13,6 +21,7 @@
     - ch_collections.enterpriselinux6.clamav
     - cloudwatch_agent
     - ch_collections.base.cloudwatch_agent_helper
+    - ch_collections.base.nagios_nrpe_client
   tasks: 
     - name: update iscsi config setting
       lineinfile: 
@@ -34,4 +43,9 @@
         name: amazon-ssm-agent
         state: stopped
         enabled: yes
-        
+    - name: Create persistent SELinux boolean policies
+      ansible.posix.seboolean:
+        name: "{{ item }}"
+        state: yes
+        persistent: yes
+      loop: "{{ selinux_policies }}"
