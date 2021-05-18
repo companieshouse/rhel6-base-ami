@@ -16,6 +16,8 @@ additional_packages:
   - openjade
   - jadetex
   - screen
+  - ftp
+  - telnet
 
 pip_package: python-pip
 pip_executable: "/usr/local/bin/pip3"
