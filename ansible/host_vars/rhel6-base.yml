@@ -44,6 +44,7 @@ epel_repo_gpg_key_url: "https://archives.fedoraproject.org/pub/archive/epel/RPM-
 rhel6cis_time_synchronization: chrony
 rhel6cis_time_synchronization_servers: ["169.254.169.123"] # Default VPC source
 rhel6cis_firewall: "iptables"
+rhel6cis_telnet_required: true
 # Disable rsyslog/syslog-ng, using cloudwatch
 rhel6cis_rule_4_2_3: false
 rhel6cis_rule_4_2_1_1: false
