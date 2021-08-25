@@ -5,7 +5,7 @@ collections:
     version: 0.1.41
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base/
     type: git
-    version: 0.1.41
+    version: 0.1.72
   - name: ansible.posix
     version: 1.1.1
 

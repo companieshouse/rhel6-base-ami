@@ -32,6 +32,8 @@ pip_install_packages:
   - name: selinux
     umask: "0022"
 
+clamav_mirror: http://clamav-mirror.sharedservices.aws.internal
+
 selinux_policies:
   - antivirus_can_scan_system
   - nagios_run_sudo
