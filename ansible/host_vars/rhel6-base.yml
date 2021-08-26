@@ -8,7 +8,7 @@ additional_packages:
   - libselinux-python
   - libsemanage-python
   - git
-  - https://s3.{{ region| default("eu-west-2") }}.amazonaws.com/amazon-ssm-{{ region| default("eu-west-2") }}/latest/linux_amd64/amazon-ssm-agent.rpm
+  - https://s3.{{ region| default("eu-west-2") }}.amazonaws.com/amazon-ssm-{{ region| default("eu-west-2") }}/3.0.1390.0/linux_amd64/amazon-ssm-agent.rpm
   - jq
   - docbook-utils
   - docbook-utils-pdf
