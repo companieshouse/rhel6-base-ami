@@ -10,7 +10,7 @@ collections:
     version: 1.1.1
 
 roles:
-  - src: christiangda.amazon_cloudwatch_agent
+  - src: https://github.com/companieshouse/ansible-role-amazon-cloudwatch-agent.git
     name: cloudwatch_agent
   - src: geerlingguy.repo-epel
     name: epel
