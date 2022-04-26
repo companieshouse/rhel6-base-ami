@@ -45,3 +45,8 @@
         state: yes
         persistent: yes
       loop: "{{ selinux_policies }}"
+    - name: service chronyd
+      service:
+        name: chronyd
+        state: started
+        enabled: yes

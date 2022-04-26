@@ -19,6 +19,7 @@ additional_packages:
   - screen
   - ftp
   - telnet
+  - chrony
 
 pip_package: python-pip
 pip_executable: "/usr/local/bin/pip3"
