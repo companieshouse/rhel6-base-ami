@@ -2,7 +2,7 @@
 collections:
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base/
     type: git
-    version: feature/update-clamav-async-task
+    version: 0.1.114
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/enterpriselinux6/
     type: git
     version: 0.1.109
