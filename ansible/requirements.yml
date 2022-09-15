@@ -1,11 +1,11 @@
 ---
 collections:
-  - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base/
-    type: git
-    version: feature/bump-galaxy-version
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/enterpriselinux6/
     type: git
     version: 0.1.109
+  - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base/
+    type: git
+    version: 0.1.114
   - name: community.general
     version: 4.8.0
   - name: ansible.posix
