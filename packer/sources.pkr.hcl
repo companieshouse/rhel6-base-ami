@@ -17,6 +17,8 @@ source "amazon-ebs" "builder" {
     device_name = "/dev/sda1"
     volume_size = var.root_volume_size_gb
     volume_type = "gp3"
+    throughput =  var.root_volume_through_put
+    iops  =  var.root_volume_iops
     delete_on_termination = true
   }
 
