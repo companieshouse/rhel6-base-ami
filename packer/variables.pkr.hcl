@@ -68,7 +68,7 @@ variable "root_volume_size_gb" {
   description = "The EC2 instance root volume size in Gibibytes (GiB)"
 }
 
-variable "root_volume_through_put" {
+variable "root_volume_throughput" {
   type        = number
   default     = 125
   description = "The EC2 instance root volume throughput (MiB/s)"
