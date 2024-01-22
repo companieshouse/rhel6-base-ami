@@ -2,10 +2,10 @@
 collections:
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/enterpriselinux6/
     type: git
-    version: 0.1.109
+    version: 0.1.124
   - name: https://github.com/companieshouse/ansible-collections.git#/ch_collections/base/
     type: git
-    version: 0.1.115
+    version: 0.1.124
   - name: community.general
     version: 4.8.0
   - name: ansible.posix
