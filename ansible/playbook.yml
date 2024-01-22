@@ -23,6 +23,7 @@
     - ch_collections.base.cloudwatch_agent_helper
     - ch_collections.base.nagios_nrpe_client
     - ch_collections.base.auditd
+    - ch_collections.base.cron_control
   tasks: 
     - name: update iscsi config setting
       lineinfile: 
