@@ -4,6 +4,7 @@
   collections:
     - ch_collections.base
     - ch_collections.enterpriselinux6
+    - ch_collections.security_banner
   pre_tasks:
     - name: Updating System Packages Before Ansible Run
       yum:
@@ -23,6 +24,8 @@
     - ch_collections.base.cloudwatch_agent_helper
     - ch_collections.base.nagios_nrpe_client
     - ch_collections.base.auditd
+    - ch_collections.security_banner.banner
+
   tasks: 
     - name: update iscsi config setting
       lineinfile: 
@@ -50,25 +53,3 @@
         name: chronyd
         state: started
         enabled: yes
-    - name: Enable security banner
-      block:
-        - name: Copy message of the day file
-          ansible.builtin.copy:
-            src: motd
-            dest: /etc/motd
-            owner: root
-            group: root
-            mode: '0644'
-        - name: Copy banner.sh
-          ansible.builtin.copy:
-            src: banner.sh
-            dest: /etc/profile.d/banner.sh
-            owner: root
-            group: root
-            mode: '0644'
-        - name: Disable pam motd
-          ansible.builtin.replace:
-            path: /etc/pam.d/sshd
-            regexp: '(\s+)session\ \ \ \ optional\ \ \ \ \ pam_motd.so(\s+.*)?$'
-            replace: '\1#session    optional     pam_motd.so\2'
-            backup: no
