@@ -4,6 +4,7 @@
   collections:
     - ch_collections.base
     - ch_collections.enterpriselinux6
+    - ch_collections.security_banner
   pre_tasks:
     - name: Updating System Packages Before Ansible Run
       yum:
@@ -23,6 +24,7 @@
     - ch_collections.base.cloudwatch_agent_helper
     - ch_collections.base.auditd
     - ch_collections.base.cron_control
+    - ch_collections.security_banner.banner
   tasks: 
     - name: update iscsi config setting
       lineinfile: 
