@@ -32,23 +32,53 @@
         regexp: '^node.session.timeo.replacement_timeout = 120' 
         line: 'node.session.timeo.replacement_timeout = 5'
         backrefs: yes
+
     - name: Run multipath config tool to enable multipath and disable user friendly names
       command: mpathconf --enable --with_multipathd y --with_chkconfig y --user_friendly_names n
       args:
         creates: /etc/multipath.conf
+
     - name: Make sure aws ssm agent is enabled
       service:
         name: amazon-ssm-agent
         state: stopped
         enabled: yes
+
     - name: Create persistent SELinux boolean policies
       ansible.posix.seboolean:
         name: "{{ item }}"
         state: yes
         persistent: yes
       loop: "{{ selinux_policies }}"
+      
     - name: service chronyd
       service:
         name: chronyd
         state: started
         enabled: yes
+
+    - name: Create new symbolic link for crond
+      ansible.builtin.file:
+         src: /etc/rc.d/init.d/crond
+         dest: /etc/rc.d/rc3.d/S25crond
+         owner: root
+         group: root
+         state: link  
+
+    - name: Create new symbolic link for postfix
+      ansible.builtin.file:
+         src: /etc/rc.d/init.d/postfix
+         dest: /etc/rc.d/rc3.d/S25postfix
+         owner: root
+         group: root
+         state: link
+
+    - name: Remove link old crond link
+      ansible.builtin.file:
+        path: /etc/rc.d/rc3.d/S90crond
+        state: absent
+
+    - name: Remove link old postfix link
+      ansible.builtin.file:
+        path: /etc/rc.d/rc3.d/S80postfix
+        state: absent
