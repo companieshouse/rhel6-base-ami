@@ -24,7 +24,6 @@
     - ch_collections.base.cloudwatch_agent_helper
     - ch_collections.base.auditd
     - ch_collections.base.cron_control
-    - ch_collections.security_banner.banner
   tasks: 
     - name: update iscsi config setting
       lineinfile: 
@@ -56,29 +55,3 @@
         name: chronyd
         state: started
         enabled: yes
-
-    - name: Create new symbolic link for crond
-      ansible.builtin.file:
-         src: /etc/rc.d/init.d/crond
-         dest: /etc/rc.d/rc3.d/S25crond
-         owner: root
-         group: root
-         state: link  
-
-    - name: Create new symbolic link for postfix
-      ansible.builtin.file:
-         src: /etc/rc.d/init.d/postfix
-         dest: /etc/rc.d/rc3.d/S25postfix
-         owner: root
-         group: root
-         state: link
-
-    - name: Remove link old crond link
-      ansible.builtin.file:
-        path: /etc/rc.d/rc3.d/S90crond
-        state: absent
-
-    - name: Remove link old postfix link
-      ansible.builtin.file:
-        path: /etc/rc.d/rc3.d/S80postfix
-        state: absent
