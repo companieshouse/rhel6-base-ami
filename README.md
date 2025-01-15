@@ -14,7 +14,6 @@ Things Ansible does:
  * Runs CIS hardening for RL6
  * Installs and configures standard ClamAV install, no file exclusions have been added.
  * Installs CloudWatch and adds the config file to the correct location
- * Installs and configures Nagios client plugins and scripts
  * Installs/Checks the following packages:
     * openssl
     * openssh-server
