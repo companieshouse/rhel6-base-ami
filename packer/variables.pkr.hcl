@@ -27,16 +27,10 @@ variable "aws_region" {
   description = "The AWS region in which the AMI will be built"
 }
 
-variable "aws_source_ami_filter_name" {
+variable "aws_source_ami_id" {
   type        = string
-  default     = "RHEL-6.10*"
-  description = "The source AMI filter string. Any filter described by the DescribeImages API documentation is valid. If multiple images match then the latest will be used"
-}
-
-variable "aws_source_ami_owner_id" {
-  type        = string
-  default     = "aws-marketplace"
-  description = "The source AMI owner ID; used in combination with aws_source_ami_filter_name to filter for matching source AMIs"
+  default     = "ami-05dc7d6a10e266df7"
+  description = "The source AMI ID (RHEL-6.10.0_HVM-20230718), pinned because in AWS Marketplace its deprecated and hidden"
 }
 
 variable "aws_subnet_filter_name" {
@@ -108,4 +102,3 @@ variable "kms_key_id" {
   default     = null
   description = "KMS key ID, arn or alias to use for root volume encryption in the main region. If encrypt_boot is true and this is left null, the AWS default key is used"
 }
-
